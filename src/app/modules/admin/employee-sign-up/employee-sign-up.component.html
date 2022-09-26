@@ -2,10 +2,10 @@
   <mat-grid-tile>
     <div class="signup-container">
       <form method="POST" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
-        <h1 class="heading">Signup Form</h1>
+        <h1 class="heading">Add Employee Form</h1>
         <mat-form-field appearance="fill" class="width-50">
           <mat-label>Name</mat-label>
-          <input matInput formControlName="firstName" />
+          <input matInput formControlName="names" />
         </mat-form-field>
 
         <br />
@@ -68,7 +68,10 @@
           <mat-radio-button class="example-radio-button ml-3" value="True"
             >Yes</mat-radio-button
           >
-          <mat-radio-button class="example-radio-button ml-3" value="False"
+          <mat-radio-button
+            class="example-radio-button ml-3"
+            value="False"
+            [checked]="true"
             >No</mat-radio-button
           >
         </mat-radio-group>

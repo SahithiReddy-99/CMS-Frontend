@@ -17,7 +17,7 @@ export class EmployeeSignUpComponent implements OnInit {
   email = new FormControl('', [Validators.email, Validators.required]);
   name = new FormControl('');
   address = new FormControl('');
-  
+
   password = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]);
   mobileNo = new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]);
   isAdmin = new FormControl(false, [Validators.required]);
@@ -38,5 +38,8 @@ export class EmployeeSignUpComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log(this.employeeForm.value);
+
   }
+
 }
