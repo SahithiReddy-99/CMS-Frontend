@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-employee-sign-up',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeeSignUpComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private auth: AuthService) { }
 
   employeeForm!: FormGroup;
   roleTypes = ['Security', 'Helper', 'Supervisor', 'Admin'];
@@ -38,7 +39,19 @@ export class EmployeeSignUpComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.employeeForm.value);
+
+    try {
+      this.auth.registerEmployee(this.employeeForm.value).subscribe(res => {
+        console.log(res);
+        // this.router.navigate(['/login']);
+      }
+      );
+    }
+    catch (error) {
+      console.log(error);
+
+    }
+
 
   }
 

@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AngularMaterialModule } from './angular-material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AngularMaterialModule } from './angular-material.module';
     BrowserAnimationsModule,
 
     AngularMaterialModule, 
+    HttpClientModule
 
 
   ],

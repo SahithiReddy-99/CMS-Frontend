@@ -4,12 +4,18 @@ import { EmployeeSignUpComponent } from './employee-sign-up/employee-sign-up.com
 import { AngularMaterialModule } from 'src/app/angular-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
-    EmployeeSignUpComponent
+    EmployeeSignUpComponent,
+    DashboardComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

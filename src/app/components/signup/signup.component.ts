@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PasswordChecker } from 'src/app/CustomValidators/password-checker';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,7 @@ import { PasswordChecker } from 'src/app/CustomValidators/password-checker';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private auth: AuthService) { }
 
   hide = true;
   userForm!: FormGroup;
@@ -41,8 +42,17 @@ export class SignupComponent implements OnInit {
   onReset(): void { }
 
   onSubmit(): void {
-    console.log(this.userForm.value);
+    try {
+      this.auth.registerUser(this.userForm.value).subscribe(res => {
+        console.log(res);
+        this.router.navigate(['/login']);
+      }
+      );
+    }
+    catch (error) {
+      console.log(error);
 
+    }
   }
 
 
