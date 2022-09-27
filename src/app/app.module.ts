@@ -11,12 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularMaterialModule } from './angular-material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { EmpLoginComponent } from './components/emp-login/emp-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    EmpLoginComponent
   ],
   imports: [
     BrowserModule,
