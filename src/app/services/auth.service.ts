@@ -20,4 +20,8 @@ export class AuthService {
     return this.http.post(this.apiUrl + "employee", data);
 
   }
+
+  getOwners(){
+    return this.http.get(this.apiUrl + "owner");
+  }
 }

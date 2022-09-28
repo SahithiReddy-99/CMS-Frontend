@@ -1,0 +1,7 @@
+.header-nav {
+  height: 70px;
+
+  box-shadow: 0 0px 18px 0px rgb(166, 155, 155);
+  /* box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1); */
+  padding: 0px 50px;
+}

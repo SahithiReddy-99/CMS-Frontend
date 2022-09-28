@@ -7,7 +7,12 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faB, faFilm } from '@fortawesome/free-solid-svg-icons';
 
+import { library as legacyLibrary } from '@fortawesome/fontawesome-svg-core';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 
 @NgModule({
@@ -15,13 +20,15 @@ import { FooterComponent } from './footer/footer.component';
     EmployeeSignUpComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ReviewsComponent
   ],
   imports: [
     CommonModule,
     AngularMaterialModule,
     ReactiveFormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    NgbModule, FontAwesomeModule
   ]
 })
 export class AdminModule { }
