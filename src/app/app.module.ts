@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmpLoginComponent } from './components/emp-login/emp-login.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -29,9 +29,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FontAwesomeModule,
     AngularMaterialModule,
-    HttpClientModule, NgbModule, FontAwesomeModule
+    HttpClientModule, NgbModule,
 
 
   ],
