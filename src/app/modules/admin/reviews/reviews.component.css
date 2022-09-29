@@ -76,10 +76,10 @@ a {
   border: 2px solid #f0f0f0;
 }
 
-.carousal{
+.carousel{
   position:relative;
 }
-.carousal-indicators{
+.carousel-indicators{
   bottom: -20px;
   position: absolute;
   left: 50%;
