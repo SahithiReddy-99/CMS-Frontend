@@ -1,4 +1,4 @@
-<mat-grid-list cols="1" rowHeight="500px">
+<mat-grid-list cols="1" rowHeight="1000px">
   <mat-grid-tile>
     <div class="signup-container">
       <form method="POST" [formGroup]="userForm" (ngSubmit)="onSubmit()">
@@ -35,20 +35,21 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="width-50 ml-2">
-          <mat-label>UserName</mat-label>
-          <input
-            matInput
-            formControlName="username"
-            required
-            ng-maxlength="5"
-          />
-          <span matSuffix style="padding-right: 40px !important"></span>
-          <mat-error *ngIf="username.hasError('required')">
-            This Field is Required
-          </mat-error>
+        <mat-form-field appearance="fill" class="width-50">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address" />
         </mat-form-field>
-
+        <br />
+        <mat-form-field appearance="fill" class="width-50 ml-2">
+          <mat-label>Occupation</mat-label>
+          <input matInput formControlName="occupation" />
+        </mat-form-field>
+        <br />
+        <div>
+          <mat-label>Image</mat-label>
+          <input type="file" formControlName="image" />
+        </div>
+        <br />
         <br />
 
         <mat-form-field appearance="fill" class="width-100">
