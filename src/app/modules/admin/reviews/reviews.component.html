@@ -6,7 +6,7 @@
           <div class="row">
             <div class="col-sm-7">
               <h1 class="ban-headline">
-                Be Smart In Managing Housing Society Online
+                Online Housing Community Management System
               </h1>
               <br />
               <p>
@@ -20,7 +20,7 @@
                 >
               </p>
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-sm-4">
                   <button
                     type="button"
@@ -37,14 +37,14 @@
                     class="img-responsive"
                   />
                 </div>
-              </div>
+              </div> -->
 
-              <img
+              <!-- <img
                 style="margin-top: 20px"
                 src="https://mysocietyclub.com/assets/images/newimg/logo.png"
                 alt="Payment Wallets"
                 class="img-responsive"
-              />
+              /> -->
             </div>
 
             <div class="col-sm-5">
@@ -73,10 +73,15 @@
         data-ride="carousel"
       >
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+          <li
+            *ngFor="let item of reviews"
+            data-target="#carouselExampleIndicators"
+            data-slide-to="item"
+          ></li>
+          <!-- <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> -->
         </ol>
 
         <div class="row">
@@ -101,12 +106,7 @@
                   />
                   <br />
                   <p>
-                    <i
-                      >"We started using MySocietyClub last six month. Now our
-                      Society is totally online and functioning digitally. It’s
-                      user friendly interface make housing society work easier
-                      and hassle free. Good luck to MySocietyClub team.""</i
-                    >
+                    <i>{{ reviews[0].title }}</i>
                   </p>
                   <img
                     width="60px"

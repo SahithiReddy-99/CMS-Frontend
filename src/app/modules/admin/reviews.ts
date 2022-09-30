@@ -1,6 +1,6 @@
-export interface Review{
+export interface Review {
     title: string;
-    description:string;
-    user:string;
-    
+    reviews: string;
+    email: string;
+
 }

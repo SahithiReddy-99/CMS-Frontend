@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]);
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private auth: AuthService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private auth: AuthService, private user: UserService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -30,7 +31,13 @@ export class LoginComponent implements OnInit {
 
     try {
       this.auth.login(this.loginForm.value).subscribe(res => {
-        console.log(res);
+
+        let data = JSON.stringify(res);
+        let obj = JSON.parse(data);
+        this.user.loginUser = obj
+        this.user.isAuthenticated = true;
+
+        this.router.navigate(['/admin/myProfile']);
 
       }
       );
@@ -39,8 +46,8 @@ export class LoginComponent implements OnInit {
       console.log(error);
 
     }
-
-
   }
 
 }
+
+

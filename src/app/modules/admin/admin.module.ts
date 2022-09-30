@@ -13,6 +13,8 @@ import { faB, faFilm } from '@fortawesome/free-solid-svg-icons';
 
 import { library as legacyLibrary } from '@fortawesome/fontawesome-svg-core';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { UserhomeComponent } from './userhome/userhome.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ReviewsComponent } from './reviews/reviews.component';
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    UserhomeComponent,
+    UpdateProfileComponent
   ],
   imports: [
     CommonModule,

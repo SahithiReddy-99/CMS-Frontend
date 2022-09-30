@@ -1,13 +1,14 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Review } from '../modules/admin/reviews';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  apiUrl = "http://10.129.245.173:7000/";
+  apiUrl = "http://10.129.245.173:8989/";
 
   constructor(private http: HttpClient) { }
 
@@ -27,5 +28,10 @@ export class AuthService {
 
   login(data: any) {
     return this.http.post(this.apiUrl + "login", data);
+  }
+
+  getreviews(): Observable<any> {
+    return this.http.get(this.apiUrl + "reviews");
+
   }
 }

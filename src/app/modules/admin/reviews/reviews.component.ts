@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Review } from '../reviews';
+import { AuthService } from 'src/app/services/auth.service';
+
+interface Review {
+  title: string;
+  reviews: string;
+  email: string;
+
+}
 
 @Component({
   selector: 'app-reviews',
@@ -11,9 +18,16 @@ export class ReviewsComponent implements OnInit {
   reviews: Review[] = [];
 
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
+    this.auth.getreviews().subscribe(data => {
+      this.reviews = data;
+      console.log(this.reviews);
+
+    });
+
+
   }
 
 }
