@@ -14,7 +14,7 @@ const routes: Routes = [
             { path: 'myProfile', component: UserhomeComponent },
             { path: 'emp', component: EmployeeSignUpComponent },
             { path: '', component: ReviewsComponent },
-            { path: 'update-profile', component: UpdateProfileComponent }
+            { path: 'updateprofile', component: UpdateProfileComponent }
         ]
     },
 

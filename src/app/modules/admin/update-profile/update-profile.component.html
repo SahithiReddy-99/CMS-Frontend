@@ -2,7 +2,7 @@
   <mat-grid-tile>
     <div class="signup-container">
       <form method="POST" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-        <h1 class="heading">Signup Form</h1>
+        <h1 class="heading">Update Form</h1>
         <mat-form-field appearance="fill" class="width-50">
           <mat-label>First Name</mat-label>
           <input matInput formControlName="firstName" />
@@ -45,11 +45,7 @@
           <input matInput formControlName="occupation" />
         </mat-form-field>
         <br />
-        <div>
-          <mat-label>Image</mat-label>
-          <input type="file" formControlName="image" />
-        </div>
-        <br />
+
         <br />
 
         <button

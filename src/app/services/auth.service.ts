@@ -34,4 +34,9 @@ export class AuthService {
     return this.http.get(this.apiUrl + "reviews");
 
   }
+  updateProfile(data: {}) {
+    return this.http.post(this.apiUrl + "updateUser", data);
+
+
+  }
 }
