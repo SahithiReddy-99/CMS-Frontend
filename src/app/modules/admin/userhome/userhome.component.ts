@@ -17,5 +17,10 @@ export class UserhomeComponent implements OnInit {
   updateProfile() {
     this.router.navigate(['admin/updateprofile']);
   }
+  addReview() {
+    this.router.navigate(['admin/addreview']);
+
+  }
+  showBills() { }
 
 }

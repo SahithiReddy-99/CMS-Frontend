@@ -36,7 +36,10 @@ export class AuthService {
   }
   updateProfile(data: {}) {
     return this.http.post(this.apiUrl + "updateUser", data);
+  }
 
+  addReview(data: {}) {
+    return this.http.post(this.apiUrl + "addReview", data);
 
   }
 }

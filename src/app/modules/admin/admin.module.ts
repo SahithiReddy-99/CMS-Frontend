@@ -15,6 +15,7 @@ import { library as legacyLibrary } from '@fortawesome/fontawesome-svg-core';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { AddReviewComponent } from './add-review/add-review.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     FooterComponent,
     ReviewsComponent,
     UserhomeComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    AddReviewComponent
   ],
   imports: [
     CommonModule,
