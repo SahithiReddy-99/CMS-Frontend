@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-add-review',
@@ -14,7 +15,7 @@ export class AddReviewComponent implements OnInit {
   reviews = new FormControl('', [Validators.required]);
 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private auth: AuthService) { }
   ngOnInit(): void {
     this.reviewForm = this.formBuilder.group({
       email: this.email,
@@ -22,6 +23,10 @@ export class AddReviewComponent implements OnInit {
       reviews: this.reviews
     })
 
+
+  }
+  onSubmit() {
+    this.auth.addReview(this.reviewForm.value).subscribe(data => console.log(data));
 
   }
 }

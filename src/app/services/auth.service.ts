@@ -42,4 +42,9 @@ export class AuthService {
     return this.http.post(this.apiUrl + "addReview", data);
 
   }
+
+  showBills(data: {}): Observable<any> {
+    return this.http.post(this.apiUrl + "showbills", data);
+
+  }
 }

@@ -21,6 +21,8 @@ export class UserhomeComponent implements OnInit {
     this.router.navigate(['admin/addreview']);
 
   }
-  showBills() { }
+  showBills() {
+    this.router.navigate(['admin/showbills']);
+  }
 
 }

@@ -21,7 +21,7 @@ export class UpdateProfileComponent implements OnInit {
   mobileNo = new FormControl(this.user.loginUser.mobileNo, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]);
   occupation = new FormControl(this.user.loginUser.occupation, [Validators.required, Validators.maxLength(30)]);
   address = new FormControl(this.user.loginUser.address, [Validators.minLength(5), Validators.maxLength(200)]);
-  
+
 
 
   ngOnInit(): void {
@@ -29,20 +29,33 @@ export class UpdateProfileComponent implements OnInit {
       email: this.email,
       firstName: this.firstName,
       lastName: this.lastName,
-
       mobileNo: this.mobileNo,
       occupation: this.occupation,
       address: this.address,
-
-      // add image
-   
     })
-
-
   }
 
   onSubmit() {
-    this.auth.updateProfile(this.updateForm.value).subscribe(data => console.log(data)
-    )
+
+    try {
+      this.auth.updateProfile(this.updateForm.value).subscribe(
+        data => {
+          window.alert("Profile updated successfully!");
+          this.user.loginUser.email = this.updateForm.value.email;
+          this.user.loginUser.firstName = this.updateForm.value.firstName;
+          this.user.loginUser.lastName = this.updateForm.value.lastName;
+          this.user.loginUser.mobileNo = this.updateForm.value.mobileNo;
+          this.user.loginUser.occupation = this.updateForm.value.occupation;
+          this.user.loginUser.address = this.updateForm.value.address;
+          this.router.navigate(['admin/myProfile']);
+
+        }
+      )
+    }
+    catch (error) {
+      console.log(error);
+    }
   }
 }
+
+

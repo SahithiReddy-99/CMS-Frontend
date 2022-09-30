@@ -16,6 +16,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { AddReviewComponent } from './add-review/add-review.component';
+import { ShowBillsComponent } from './show-bills/show-bills.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AddReviewComponent } from './add-review/add-review.component';
     ReviewsComponent,
     UserhomeComponent,
     UpdateProfileComponent,
-    AddReviewComponent
+    AddReviewComponent,
+    ShowBillsComponent
   ],
   imports: [
     CommonModule,
