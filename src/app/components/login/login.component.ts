@@ -36,8 +36,15 @@ export class LoginComponent implements OnInit {
         let obj = JSON.parse(data);
         this.user.loginUser = obj
         this.user.isAuthenticated = true;
+        if (obj.isAdmin == true) {
+          this.router.navigate(['/adminview']);
+        }
+        else {
+          this.router.navigate(['/admin/myProfile']);
 
-        this.router.navigate(['/admin/myProfile']);
+        }
+
+
 
       }
       );

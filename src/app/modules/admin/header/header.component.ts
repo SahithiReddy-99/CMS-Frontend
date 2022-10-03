@@ -8,11 +8,11 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private user:UserService) { }
+  constructor(private user: UserService) { }
   isAthenticated: boolean = false;
 
   ngOnInit(): void {
-    this.isAthenticated=this.user.isAuthenticated;
+    this.isAthenticated = this.user.isAuthenticated;
   }
 
 }
