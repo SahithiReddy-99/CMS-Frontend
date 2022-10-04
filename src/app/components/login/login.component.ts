@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
 
     try {
       this.auth.login(this.loginForm.value).subscribe(res => {
+        // this.auth.getOwners
 
         let data = JSON.stringify(res);
         let obj = JSON.parse(data);

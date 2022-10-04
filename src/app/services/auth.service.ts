@@ -21,6 +21,9 @@ export class AuthService {
     return this.http.post(this.apiUrl + "register", data);
 
   }
+  getOwnerDetails(data: any) {
+    return this.http.get(this.apiUrl + "owner", data);
+  }
 
   getOwners() {
     return this.http.get(this.apiUrl + "owner");
