@@ -13,12 +13,12 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   registerUser(data: any) {
-    return this.http.post(this.apiUrl + "owner", data);
+    return this.http.post(this.apiUrl + "register", data);
 
   }
 
   registerEmployee(data: {}) {
-    return this.http.post(this.apiUrl + "employee", data);
+    return this.http.post(this.apiUrl + "register", data);
 
   }
 
@@ -47,4 +47,7 @@ export class AuthService {
     return this.http.post(this.apiUrl + "showbills", data);
 
   }
+
+  showAllEmployees(): Observable<any> { return this.http.get(this.apiUrl + "showEmployees"); }
+  showAllBills(): Observable<any> { return this.http.get(this.apiUrl + "showAllBills"); }
 }

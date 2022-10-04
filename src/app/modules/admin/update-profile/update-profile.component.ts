@@ -32,12 +32,15 @@ export class UpdateProfileComponent implements OnInit {
       mobileNo: this.mobileNo,
       occupation: this.occupation,
       address: this.address,
+      password: this.user.getloginUser().password
     })
   }
 
   onSubmit() {
 
     try {
+      console.log(this.user.getloginUser().password);
+
       this.auth.updateProfile(this.updateForm.value).subscribe(
         data => {
           window.alert("Profile updated successfully!");

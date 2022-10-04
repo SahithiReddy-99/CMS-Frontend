@@ -34,17 +34,19 @@ export class LoginComponent implements OnInit {
 
         let data = JSON.stringify(res);
         let obj = JSON.parse(data);
-        this.user.loginUser = obj
-        this.user.isAuthenticated = true;
-        if (obj.isAdmin == true) {
-          this.router.navigate(['/adminview']);
+        console.log(obj);
+
+        this.user.setloginUser(obj);
+        this.user.setIsAuthenticated(true);
+        console.log();
+
+        if (obj.is_admin == true) {
+          this.router.navigate(['/admin/view']);
         }
         else {
           this.router.navigate(['/admin/myProfile']);
 
         }
-
-
 
       }
       );

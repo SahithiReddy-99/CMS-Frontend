@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
   roleId = "User";
   address = new FormControl('', [Validators.minLength(5), Validators.maxLength(200)]);
   user_type = "owner";
-  image = new FormControl('', [Validators.required]);
+  // image = new FormControl('', [Validators.required]);
 
 
   get f() {
@@ -56,7 +56,7 @@ export class SignupComponent implements OnInit {
       roleId: this.roleId,
       user_type: this.user_type,
       // add image
-      image: this.image
+      // image: this.image
 
 
 

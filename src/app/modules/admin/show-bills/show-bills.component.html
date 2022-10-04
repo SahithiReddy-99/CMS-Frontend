@@ -1,6 +1,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th scope="col" *ngIf="admin">Owner</th>
       <th scope="col">Bill Number</th>
       <th scope="col">Type</th>
       <th scope="col">Description</th>
@@ -10,6 +11,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let bill of bills">
+      <th scope="row" *ngIf="admin">{{ bill.owner }}</th>
       <th scope="row">{{ bill.billNumber }}</th>
       <td>{{ bill.type }}</td>
       <td>{{ bill.description }}</td>

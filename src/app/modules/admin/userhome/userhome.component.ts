@@ -8,8 +8,12 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./userhome.component.css']
 })
 export class UserhomeComponent implements OnInit {
+  owner!: {};
 
-  constructor(private router: Router, private user: UserService) { }
+  constructor(private router: Router, private user: UserService) {
+    this.owner = this.user.getloginUser();
+
+  }
 
   ngOnInit(): void {
   }

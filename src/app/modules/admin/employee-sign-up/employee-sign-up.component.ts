@@ -16,23 +16,26 @@ export class EmployeeSignUpComponent implements OnInit {
   roleTypes = ['Security', 'Helper', 'Supervisor', 'Admin'];
   roleId = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.email, Validators.required]);
-  name = new FormControl('');
+  firstName = new FormControl('');
   address = new FormControl('');
 
   password = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]);
   mobileNo = new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]);
-  isAdmin = new FormControl(false, [Validators.required]);
+  is_admin = new FormControl(false, [Validators.required]);
 
   ngOnInit(): void {
 
     this.employeeForm = this.formBuilder.group({
       email: this.email,
-      name: this.name,
+      firstName: this.firstName,
       password: this.password,
       mobileNo: this.mobileNo,
       roleId: this.roleId,
       address: this.address,
-      isAdmin: this.isAdmin
+      is_admin: this.is_admin,
+      confirm_password: this.password,
+      user_type: "staff",
+      occupation: this.roleId,
     }
     )
 
@@ -42,8 +45,7 @@ export class EmployeeSignUpComponent implements OnInit {
 
     try {
       this.auth.registerEmployee(this.employeeForm.value).subscribe(res => {
-        console.log(res);
-        // this.router.navigate(['/login']);
+        window.alert(res);
       }
       );
     }

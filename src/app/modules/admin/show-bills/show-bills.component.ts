@@ -20,17 +20,33 @@ interface Bill {
 export class ShowBillsComponent implements OnInit {
 
   bills: Bill[] = [];
+  admin: boolean = false;
 
   constructor(private auth: AuthService, private user: UserService) {
+    this.admin = this.user.getloginUser().is_admin;
     try {
-      let email = this.user.loginUser.email;
-      let x = { email: email };
-      this.auth.showBills(x).subscribe(data => {
-        console.log(data);
-        this.bills = data;
-        console.log(this.bills);
+
+      if (this.admin) {
+
+        this.auth.showAllBills().subscribe(data => {
+          console.log(data);
+          this.bills = data;
+          console.log(this.bills);
+        }
+        )
       }
-      )
+      else {
+        let email = this.user.getloginUser().email;
+        this.admin = this.user.getloginUser().is_admin;
+        let x = { email: email };
+        this.auth.showBills(x).subscribe(data => {
+          console.log(data);
+          this.bills = data;
+          console.log(this.bills);
+        }
+        )
+      }
+
     }
     catch (err) { console.log(err); }
 

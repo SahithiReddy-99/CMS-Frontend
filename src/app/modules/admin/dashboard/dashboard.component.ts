@@ -12,9 +12,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.auth.getOwners().subscribe(data => {
-      console.log(data);
-    });
+    // this.auth.getOwners().subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
 
