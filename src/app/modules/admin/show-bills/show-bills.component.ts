@@ -24,6 +24,8 @@ export class ShowBillsComponent implements OnInit {
 
   constructor(private auth: AuthService, private user: UserService) {
     this.admin = this.user.getloginUser().is_admin;
+    console.log(this.user.getloginUser());
+
     try {
 
       if (this.admin) {

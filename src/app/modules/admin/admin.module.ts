@@ -20,6 +20,7 @@ import { ShowBillsComponent } from './show-bills/show-bills.component';
 import { AdminviewComponent } from './adminview/adminview.component';
 import { ShowEmployeesComponent } from './show-employees/show-employees.component';
 import { EmployeeViewComponent } from './employee-view/employee-view.component';
+import { VisitorsComponent } from './visitors/visitors.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { EmployeeViewComponent } from './employee-view/employee-view.component';
     ShowBillsComponent,
     AdminviewComponent,
     ShowEmployeesComponent,
-    EmployeeViewComponent
+    EmployeeViewComponent,
+    VisitorsComponent
   ],
   imports: [
     CommonModule,
