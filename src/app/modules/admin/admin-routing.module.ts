@@ -9,7 +9,7 @@ import { ShowBillsComponent } from './show-bills/show-bills.component';
 import { ShowEmployeesComponent } from './show-employees/show-employees.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { UserhomeComponent } from './userhome/userhome.component';
-
+import { EmployeeViewComponent } from './employee-view/employee-view.component';
 
 const routes: Routes = [
 
@@ -23,6 +23,7 @@ const routes: Routes = [
             { path: 'showbills', component: ShowBillsComponent },
             { path: 'view', component: AdminviewComponent },
             { path: 'showemployees', component: ShowEmployeesComponent },
+            { path: 'empView', component: EmployeeViewComponent },
 
         ]
     },

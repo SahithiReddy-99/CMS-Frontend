@@ -19,6 +19,7 @@ import { AddReviewComponent } from './add-review/add-review.component';
 import { ShowBillsComponent } from './show-bills/show-bills.component';
 import { AdminviewComponent } from './adminview/adminview.component';
 import { ShowEmployeesComponent } from './show-employees/show-employees.component';
+import { EmployeeViewComponent } from './employee-view/employee-view.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ShowEmployeesComponent } from './show-employees/show-employees.componen
     AddReviewComponent,
     ShowBillsComponent,
     AdminviewComponent,
-    ShowEmployeesComponent
+    ShowEmployeesComponent,
+    EmployeeViewComponent
   ],
   imports: [
     CommonModule,

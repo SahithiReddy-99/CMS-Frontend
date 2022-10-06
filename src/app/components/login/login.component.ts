@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     console.log(this.loginForm.value);
 
-
     try {
       this.auth.login(this.loginForm.value).subscribe(res => {
         // this.auth.getOwners
@@ -39,14 +38,18 @@ export class LoginComponent implements OnInit {
 
         this.user.setloginUser(obj);
         this.user.setIsAuthenticated(true);
-        console.log();
+        console.log(obj.is_admin);
+        this.auth.isLoggedIn = true;
 
         if (obj.is_admin == true) {
           this.router.navigate(['/admin/view']);
         }
-        else {
+        else if (obj.roleId == "user") {
           this.router.navigate(['/admin/myProfile']);
 
+        }
+        else {
+          this.router.navigate(['/admin/empView']);
         }
 
       }

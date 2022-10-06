@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmpLoginComponent } from './components/emp-login/emp-login.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -34,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

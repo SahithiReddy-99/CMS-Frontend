@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { EmpLoginComponent } from "./components/emp-login/emp-login.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
+import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
   { path: "signup", component: SignupComponent },
@@ -11,7 +12,7 @@ const routes: Routes = [
   {
     path: "admin",
     loadChildren: () =>
-      import("./modules/admin/admin.module").then((m) => m.AdminModule),
+      import("./modules/admin/admin.module").then((m) => m.AdminModule), canActivate: [AuthGuard],
   },
 ];
 
@@ -19,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

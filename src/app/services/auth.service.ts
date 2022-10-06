@@ -9,8 +9,13 @@ import { Review } from '../modules/admin/reviews';
 export class AuthService {
 
   apiUrl = "http://10.129.245.173:8989/";
+  isLoggedIn = false;
 
   constructor(private http: HttpClient) { }
+
+  isAuthenticated() {
+    return this.isLoggedIn;
+  }
 
   registerUser(data: any) {
     return this.http.post(this.apiUrl + "register", data);
