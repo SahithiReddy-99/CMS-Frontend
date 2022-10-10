@@ -16,7 +16,10 @@ export class AddReviewComponent implements OnInit {
   reviews = new FormControl('', [Validators.required]);
 
 
+
   constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router) { }
+
+
   ngOnInit(): void {
     this.reviewForm = this.formBuilder.group({
       email: this.email,
@@ -29,9 +32,15 @@ export class AddReviewComponent implements OnInit {
   onSubmit() {
     this.auth.addReview(this.reviewForm.value).subscribe(data => {
       console.log(data);
+
       this.router.navigate(['/admin/myProfile']);
     }
     );
+
+      
+
+      this.router.navigate(['/admin/myProfile']);
+
 
   }
 }
