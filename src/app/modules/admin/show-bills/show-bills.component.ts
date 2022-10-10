@@ -40,7 +40,7 @@ export class ShowBillsComponent implements OnInit {
       else {
         let email = this.user.getloginUser().email;
         this.admin = this.user.getloginUser().is_admin;
-        let x = { email: email };
+        let x = { 'email': email };
         this.auth.showBills(x).subscribe(data => {
           console.log(data);
           this.bills = data;

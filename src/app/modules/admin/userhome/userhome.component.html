@@ -3,9 +3,11 @@
     <div class="col p-2">
       <div class="card" style="width: 20rem">
         <div class="card-body">
-          <h5 class="card-title">Sahithi</h5>
-          <h6 class="card-subtitle mb-2 text-muted">a@gmail.com</h6>
-          <button class="btn btn-primary" (click)="updateProfile()">Update Profile</button>
+          <h5 class="card-title">{{ owner.firstName }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ owner.email }}</h6>
+          <button class="btn btn-primary" (click)="updateProfile()">
+            Update Profile
+          </button>
         </div>
       </div>
     </div>

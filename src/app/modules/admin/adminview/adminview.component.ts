@@ -14,6 +14,8 @@ export class AdminviewComponent implements OnInit {
   }
   addEmployee() { this.router.navigate(['admin/emp']); }
   showEmployees() { this.router.navigate(['admin/showemployees']); }
-  showBills() { this.router.navigate(['admin/showbills']); }
+  showBills() { 
+    
+    this.router.navigate(['admin/showbills']); }
 
 }

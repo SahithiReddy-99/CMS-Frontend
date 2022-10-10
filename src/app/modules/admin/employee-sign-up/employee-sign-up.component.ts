@@ -45,7 +45,8 @@ export class EmployeeSignUpComponent implements OnInit {
 
     try {
       this.auth.registerEmployee(this.employeeForm.value).subscribe(res => {
-        window.alert(res);
+        window.alert("Employee added successfully");
+        this.router.navigate(['/admin/view']);
       }
       );
     }

@@ -58,4 +58,12 @@ export class AuthService {
 
   showAllEmployees(): Observable<any> { return this.http.get(this.apiUrl + "showEmployees"); }
   showAllBills(): Observable<any> { return this.http.get(this.apiUrl + "showAllBills"); }
+
+  // addVisitors(data:any):Observable<any> { 
+  //   data={};
+  //   return this.http.post
+  // }
+
+
+
 }

@@ -23,8 +23,8 @@
           <td>{{ emp.is_admin }}</td>
           <td>{{ emp.address }}</td>
           <td>{{ emp.roleId }}</td>
-          <td><button>Edit</button></td>
-          <td><button>Delete</button></td>
+          <td><button (click)="editEmp(emp.email)">Edit</button></td>
+          <td><button (click)="deleteEmp(emp.email)">Delete</button></td>
         </tr>
       </tbody>
     </table>

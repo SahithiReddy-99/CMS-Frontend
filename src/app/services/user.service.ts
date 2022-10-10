@@ -8,6 +8,7 @@ export class UserService {
   constructor() { }
   isAuthenticated: boolean = false;
   loginUser: any;
+  employeeDetails: any;
 
   // loginUser!: {
   //   email: string;
@@ -25,6 +26,10 @@ export class UserService {
   getloginUser() { return this.loginUser; }
   setIsAuthenticated(isAuthenticated: boolean) { this.isAuthenticated = isAuthenticated; }
   getIsAuthenticated() { return this.isAuthenticated; }
+  setEmployeeDetails(emp: any) {
+    this.employeeDetails = emp;
+  }
+  getEmployeeDetails() { return this.employeeDetails; }
 
 
 }

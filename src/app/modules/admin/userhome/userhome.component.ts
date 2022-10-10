@@ -8,8 +8,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./userhome.component.css']
 })
 export class UserhomeComponent implements OnInit {
-  owner!: {};
-
+  owner:any;
+  
   constructor(private router: Router, private user: UserService) {
     this.owner = this.user.getloginUser();
 

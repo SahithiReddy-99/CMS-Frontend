@@ -11,6 +11,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { UserhomeComponent } from './userhome/userhome.component';
 import { EmployeeViewComponent } from './employee-view/employee-view.component';
 import { VisitorsComponent } from './visitors/visitors.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 const routes: Routes = [
 
@@ -25,7 +26,8 @@ const routes: Routes = [
             { path: 'view', component: AdminviewComponent },
             { path: 'showemployees', component: ShowEmployeesComponent },
             { path: 'empView', component: EmployeeViewComponent },
-            { path: 'visitors', component: VisitorsComponent }
+            { path: 'visitors', component: VisitorsComponent },
+            { path: 'editform', component: EditFormComponent }
 
         ]
     },
