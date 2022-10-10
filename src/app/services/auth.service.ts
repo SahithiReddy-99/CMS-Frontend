@@ -8,7 +8,9 @@ import { Review } from '../modules/admin/reviews';
 })
 export class AuthService {
 
-  apiUrl = "http://10.129.245.173:8989/";
+  // apiUrl = "http://10.129.245.173:8989/";
+
+  apiUrl="http://127.0.0.1:8000/";
   isLoggedIn = false;
 
   constructor(private http: HttpClient) { }
