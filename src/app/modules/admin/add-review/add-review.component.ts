@@ -37,10 +37,6 @@ export class AddReviewComponent implements OnInit {
     }
     );
 
-      
-
-      this.router.navigate(['/admin/myProfile']);
-
 
   }
 }
