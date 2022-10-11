@@ -22,6 +22,7 @@ import { ShowEmployeesComponent } from './show-employees/show-employees.componen
 import { EmployeeViewComponent } from './employee-view/employee-view.component';
 import { VisitorsComponent } from './visitors/visitors.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import { SeeVisitorsComponent } from './see-visitors/see-visitors.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { EditFormComponent } from './edit-form/edit-form.component';
     ShowEmployeesComponent,
     EmployeeViewComponent,
     VisitorsComponent,
-    EditFormComponent
+    EditFormComponent,
+    SeeVisitorsComponent
   ],
   imports: [
     CommonModule,

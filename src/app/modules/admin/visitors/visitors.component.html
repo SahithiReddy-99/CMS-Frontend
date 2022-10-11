@@ -1,1 +1,51 @@
-<p>visitors works!</p>
+<mat-grid-list cols="1" rowHeight="500px">
+  <mat-grid-tile>
+    <div class="signup-container">
+      <form method="POST" [formGroup]="visitorForm" (ngSubmit)="onSubmit()">
+        <h1 class="heading">Add Visitor</h1>
+
+        <mat-form-field appearance="fill" class="width-100">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field appearance="fill" class="width-100">
+          <mat-label>Phone no</mat-label>
+          <input matInput formControlName="mobileNo" />
+          <span matSuffix style="padding-right: 40px !important"></span>
+          <mat-error *ngIf="mobileNo.hasError('required')">
+            This Field is Required
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field appearance="fill" class="width-100">
+          <mat-label>Reason</mat-label>
+          <input matInput formControlName="reason" />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill" class="width-100">
+          <mat-label>Flat Id</mat-label>
+          <input matInput formControlName="flatId" />
+        </mat-form-field>
+        <br />
+        <!-- <div>
+            <mat-label>Image</mat-label>
+            <input type="file" formControlName="image" />
+          </div> -->
+        <br />
+        <br />
+
+        <button
+          mat-raised-button
+          color="primary"
+          class="width-100"
+          [disabled]="visitorForm.invalid"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

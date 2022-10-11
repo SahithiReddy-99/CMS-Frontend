@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -21,10 +22,12 @@ export class ShowBillsComponent implements OnInit {
 
   bills: Bill[] = [];
   admin: boolean = false;
+  displayStyle = "none";
 
-  constructor(private auth: AuthService, private user: UserService) {
+  constructor(private auth: AuthService, private user: UserService,
+    private router: Router) {
     this.admin = this.user.getloginUser().is_admin;
-    console.log(this.user.getloginUser());
+    // console.log(this.user.getloginUser());
 
     try {
 
@@ -34,6 +37,8 @@ export class ShowBillsComponent implements OnInit {
           console.log(data);
           this.bills = data;
           console.log(this.bills);
+          if (this.bills.length > 0) { this.displayStyle = "none"; }
+          else { this.displayStyle = "block"; }
         }
         )
       }
@@ -44,6 +49,9 @@ export class ShowBillsComponent implements OnInit {
         this.auth.showBills(x).subscribe(data => {
           console.log(data);
           this.bills = data;
+          if (this.bills.length > 0) { this.displayStyle = "none"; }
+          else { this.displayStyle = "block"; }
+
           console.log(this.bills);
         }
         )
@@ -57,5 +65,25 @@ export class ShowBillsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+    if (this.user.getloginUser().role == "user") {
+      this.router.navigate(['/admin/myProfile']);
+    }
+    else if (this.user.getloginUser().role == "admin") {
+      this.router.navigate(['/admin/view']);
+    }
+    else {
+      this.router.navigate(['/admin/empView']);
+    }
+
+  }
 
 }
+
+
+
+

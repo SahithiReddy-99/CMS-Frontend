@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         if (obj.is_admin == true) {
           this.router.navigate(['/admin/view']);
         }
-        else if (obj.is_admin == false && obj.role == "User") {
+        else if (obj.is_admin == false && obj.role == "user") {
           this.router.navigate(['/admin/myProfile']);
 
         }

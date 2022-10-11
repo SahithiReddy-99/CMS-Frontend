@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Mobile No</th>
+      <th scope="col">Reason</th>
+      <th scope="col">Flat No</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let v of visitors">
+      <th scope="row">{{ v.name }}</th>
+      <th scope="row">{{ v.mobileNo }}</th>
+
+      <td>{{ v.reason }}</td>
+      <td>{{ v.flatId }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -29,9 +29,9 @@ export class SignupComponent implements OnInit {
   // image = new FormControl('', [Validators.required]);
 
 
-  get f() {
-    return this.userForm.controls;
-  }
+  // get f() {
+  //   return this.userForm.controls;
+  // }
 
   // onFileChange(event) {
 
@@ -55,10 +55,7 @@ export class SignupComponent implements OnInit {
       address: this.address,
       roleId: this.roleId,
       user_type: this.user_type,
-      // add image
-      // image: this.image
-
-
+ 
 
     }, {
       validator: PasswordChecker('password', 'confirm_password')

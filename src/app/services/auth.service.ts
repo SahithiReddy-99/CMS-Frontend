@@ -8,9 +8,9 @@ import { Review } from '../modules/admin/reviews';
 })
 export class AuthService {
 
-  // apiUrl = "http://10.129.245.173:8989/";
+  apiUrl = "http://10.129.245.173:8989/";
 
-  apiUrl="http://127.0.0.1:8000/";
+  // apiUrl="http://127.0.0.1:8000/";
   isLoggedIn = false;
 
   constructor(private http: HttpClient) { }
@@ -61,10 +61,11 @@ export class AuthService {
   showAllEmployees(): Observable<any> { return this.http.get(this.apiUrl + "showEmployees"); }
   showAllBills(): Observable<any> { return this.http.get(this.apiUrl + "showAllBills"); }
 
-  // addVisitors(data:any):Observable<any> { 
-  //   data={};
-  //   return this.http.post
-  // }
+  addVisitors(data: any): Observable<any> {
+    return this.http.post(this.apiUrl + "visitors", data);
+  }
+
+  seeVisitors(): Observable<any> { return this.http.get(this.apiUrl + "visitors"); }
 
 
 

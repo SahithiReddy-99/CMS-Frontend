@@ -13,8 +13,8 @@ export class EmployeeViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addVisitor() { this.router.navigate(['visitors']); }
-  seeVisitors() { }
+  addVisitor() { this.router.navigate(['admin/AddVisitors']); }
+  seeVisitors() { this.router.navigate(['admin/SeeVisitors']); }
   seeFlatsDetails() { }
   addBills() { }
 
