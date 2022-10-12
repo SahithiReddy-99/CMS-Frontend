@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmployeeSignUpComponent } from './employee-sign-up/employee-sign-up.component';
-import { AngularMaterialModule } from 'src/app/angular-material.module';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -24,6 +24,11 @@ import { VisitorsComponent } from './visitors/visitors.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { SeeVisitorsComponent } from './see-visitors/see-visitors.component';
 
+import { FormsModule } from '@angular/forms';
+import { AngularMaterialModule } from 'src/app/angular-material.module';
+import { DialogOverviewExampleDialog } from './show-employees/example.component';
+
+
 
 @NgModule({
   declarations: [
@@ -41,14 +46,17 @@ import { SeeVisitorsComponent } from './see-visitors/see-visitors.component';
     EmployeeViewComponent,
     VisitorsComponent,
     EditFormComponent,
-    SeeVisitorsComponent
+    SeeVisitorsComponent,
+    DialogOverviewExampleDialog
+
+
   ],
   imports: [
     CommonModule,
     AngularMaterialModule,
     ReactiveFormsModule,
     AdminRoutingModule,
-    NgbModule, FontAwesomeModule
+    NgbModule, FontAwesomeModule, FormsModule,
   ]
 })
 export class AdminModule { }
